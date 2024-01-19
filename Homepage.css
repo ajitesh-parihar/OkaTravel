@@ -1,0 +1,18 @@
+#navlist {
+    display: flex;
+    list-style-type: none;
+    border: 2px solid black;
+    padding-block: 5px;
+    justify-content: space-between;
+}
+#leftnav {
+    display: flex;
+}
+#rightnav {
+    display: flex;
+}
+
+.navitem{
+    padding-inline: 5px;
+}
+

@@ -1,41 +1,35 @@
 <?php
 $serverName = "localhost";
-$connectionOptions = array(
-    "Database" => "okatravel",
-    "Uid" => "DylHuit",
-    "PWD" => "Dylan123"
-);
+$username = "DylHuit";
+$password = "Dylan123";
+$database = "okatravel";
 
 // Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-phpinfo();
+$conn = mysqli_connect($serverName, $username, $password, $database);
 
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . sqlsrv_errors());
-}
-
-// Function to safely handle user input
-function sanitize_input($input) {
-    return htmlspecialchars(stripslashes(trim($input)));
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and get user input
-    $email = sanitize_input($_POST["email"]);
-    $password = sanitize_input($_POST["psw"]);
+    $email = ($_POST["email"]);
+    $password = ($_POST["psw"]);
 
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert data into the database
     $sql = "INSERT INTO Users (Email, Password) VALUES (?, ?)";
-    $params = array($email, $hashed_password);
+    $stmt = mysqli_prepare($conn, $sql);
 
-    $stmt = sqlsrv_query($conn, $sql, $params);
+    // Bind parameters and execute the statement
+    mysqli_stmt_bind_param($stmt, "ss", $email, $hashed_password);
+    $result = mysqli_stmt_execute($stmt);
 
-    if ($stmt === false) {
-        die(print_r(sqlsrv_errors(), true));
+    if ($result === false) {
+        die("Error: " . mysqli_error($conn));
     } else {
         // Redirect to a confirmation page after successful registration
         header("Location: confirmation.php");
@@ -43,4 +37,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-sqlsrv_close($conn);
+mysqli_close($conn);

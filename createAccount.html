@@ -19,11 +19,6 @@
             if (!emailPattern.test(email)) {
             alert('Please enter a valid email address');
             return false;
-        }
-        if (password.length < 8 || /\d/.test(password)!== true){
-            alert('Password must have at least 8 characters and contain at least one number.');
-            return false;
-        }
 
             if (password !== repeatPassword) {
                 alert('Passwords do not match');

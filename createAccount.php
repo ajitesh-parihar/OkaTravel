@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: " . mysqli_error($conn));
     } else {
         // Redirect to a confirmation page after successful registration
-        header("Location: confirmation.php");
+        header("Location: homepage.php");
         exit();
     }
 }

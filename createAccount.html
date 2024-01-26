@@ -19,6 +19,10 @@
                 alert('Passwords do not match');
                 return false;
             }
+            if (password.length < 8 || /\d/.test(password) !== true) {
+                alert('Passwords must have atleast 8 characters and contain a number');
+                return false;
+            }
 
             return true;
         }

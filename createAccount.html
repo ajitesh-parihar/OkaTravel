@@ -19,7 +19,8 @@
             if (!emailPattern.test(email)) {
             alert('Please enter a valid email address');
             return false;
-
+            }
+            
             if (password !== repeatPassword) {
                 alert('Passwords do not match');
                 return false;
@@ -30,8 +31,8 @@
             }
 
             return true;
+        
         }
-    }
     </script>
 </head>
 <body>
@@ -55,7 +56,7 @@
         </div>
 
         <div class="container signin">
-            <p>Already have an account? <a href="#">Sign in</a>.</p>
+            <p>Already have an account? <a href="signIn.html">Sign in</a>.</p>
         </div>
     </form>
 

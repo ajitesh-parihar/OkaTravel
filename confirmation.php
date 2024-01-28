@@ -12,6 +12,8 @@
         <p>Thank you for registering with OKATravel!</p>
         <p>You can now log in using your credentials.</p>
     </div>
+    <br>
+     <p><a href="signIn.html">Sign In</a></p>
 
 </body>
 </html>

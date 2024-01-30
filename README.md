@@ -1,2 +1,11 @@
-# SunFunTravel
-COSC 205 Spike project
+```
+  ____  __          ______                  __
+ / __ \/ /_____ _  /_  __/______ __  _____ / /
+/ /_/ /  '_/ _ `/   / / / __/ _ `/ |/ / -_) / 
+\____/_/\_\\_,_/   /_/ /_/  \_,_/|___/\__/_/  
+``` 
+
+## COSC 205 Spike project
+
+
+Ajitesh P, Kristina C, John C, Dylan H

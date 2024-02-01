@@ -2,32 +2,48 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="../style/Homepage.css">
+        <link rel="stylesheet" href="../styles/Homepage.css">
         <title>Homepage</title>
-
-        <style>
-            h1 {text-align: center;}
-            h2 {text-align: center;}
-            p {text-align: center;}
-            div {text-align: center;}
-        </style>
-        
     </head>
     <body>
+        <script>
+            function dropdownFunction(){
+                document.getElementById("navDropdown").classList.toggle("show");
+            }
+
+            window.onclick = function(event){
+                if(!event.target.matches('.dropBTN')) {
+                    var dropdown = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdown.length; i++){
+                        var openDropdown = dropdown[i];
+                        if (openDropdown.classList.contains('show')){
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
         <nav id="nav">
             <ul id="navlist">
                 <div id="leftnav">
                     <a href="Homepage.html"><li class="navitem">OkaTravel.ca</li></a>
-                    <form>
-                        <select name="More travel">
-                            <option value="">Stays</option>
-                            <option value="">Flights</option>
-                            <option value="">Cars</option>
-                            <option value="">Packages</option>
-                            <option value="">Things to do</option>
-                        </select>
-                    </form>
+                    <div class="dropdown">
+                        <button onclick="dropdownFunction()" class="dropBTN">More Travel
+                            <i class="fa fa-caret-down"></i></button>
+                        <div id="navDropdown" class="dropdown-content">
+                            <a href="">Stays</a>
+                            <a href="">Flights</a>
+                            <a href="">Cars</a>
+                            <a href="">Packages</a>
+                            <a href="">Things to do</a>
+                            <a href="">Cruises</a>
+                            <a href="">Deals</a>
+                            <a href="">Groups & meetings</a>
+                        </div>
+                    </div>
                 </div>
                 <div id="rightnav">
                     <li class="navitem"><a href=""><button id="App">Get The App</button></a></li>
@@ -43,48 +59,36 @@
 
         <form></form>
 
-        <br><h1>OkaTravel</h1><br>
 
-        <img src="https://canadianimmigrant.ca/wp-content/uploads/Kelowna-Downtown-770x470.jpg" class="center"><br><br>
+
+        <h1>OkaTravel</h1>
+
+        <img src="https://canadianimmigrant.ca/wp-content/uploads/Kelowna-Downtown-770x470.jpg">
 
         <h2 id="about">ABOUT US</h2>
-        <p>Welcome to OkaTravel, where your travel dreams take flight! <br>
-            OkaTravel is your go-to destination for crafting seamless and unforgettable travel experiences. <br>
-            Our mission is to empower you to plan, personalize, and embark on your dream vacations effortlessly.</p><br><br>
+        <p>Welcome to OkaTravel, where your travel dreams take flight! OkaTravel is your go-to destination for crafting seamless and unforgettable travel experiences. Our mission is to empower you to plan, personalize, and embark on your dream vacations effortlessly.</p>
 
         <h2 id="sets">What Sets Us Apart</h2>
-        <p>User-Centric Design: OkaTravel is meticulously designed with your needs in mind. <br>
-            Our user-friendly interface ensures that planning your next adventure is as enjoyable as the journey itself. <br>
-            Whether you're a first-time traveler or a seasoned explorer, OkaTravel caters to all levels of expertise. <br><br>
+        <p>User-Centric Design: OkaTravel is meticulously designed with your needs in mind. Our user-friendly interface ensures that planning your next adventure is as enjoyable as the journey itself. Whether you're a first-time traveler or a seasoned explorer, OkaTravel caters to all levels of expertise.
 
-        Endless Possibilities: No matter if you're a beach lover, a city explorer, or a nature enthusiast, 
-            <br>OkaTravel provides a diverse array of destinations and activities to suit every traveler's taste. <br>
-            With an extensive database of attractions, accommodations, and experiences, the possibilities are limitless. <br><br>
+        Endless Possibilities: No matter if you're a beach lover, a city explorer, or a nature enthusiast, OkaTravel provides a diverse array of destinations and activities to suit every traveler's taste. With an extensive database of attractions, accommodations, and experiences, the possibilities are limitless.
             
-        Smart Recommendations: Let OkaTravel be your personal travel guide. <br>
-            Our app employs advanced algorithms to recommend destinations and activities tailored to your preferences. <br>
-            Discover hidden gems, local favorites, and must-see landmarks effortlessly.</p><br><br>
+        Smart Recommendations: Let OkaTravel be your personal travel guide. Our app employs advanced algorithms to recommend destinations and activities tailored to your preferences. Discover hidden gems, local favorites, and must-see landmarks effortlessly.</p>
 
         <h2 id="commitment">Our Commitment</h2>
-        <p>Seamless Planning: We understand that planning a trip can be overwhelming. <br>
-            That's why OkaTravel is dedicated to simplifying the process. <br>
-            Effortlessly create itineraries, book accommodations, and manage reservations—all in one place. <br><br>
+        <p>Seamless Planning: We understand that planning a trip can be overwhelming. That's why OkaTravel is dedicated to simplifying the process. Effortlessly create itineraries, book accommodations, and manage reservations—all in one place.
 
-        Community-driven Experience: Join a community of like-minded travelers on OkaTravel. <br>
-            Share your experiences, tips, and recommendations with fellow users. <br>
-            Connect with a global community of explorers who share your passion for discovering the world. <br><br>
+        Community-driven Experience: Join a community of like-minded travelers on OkaTravel. Share your experiences, tips, and recommendations with fellow users. Connect with a global community of explorers who share your passion for discovering the world.
             
-        Reliable Support: Our dedicated support team is here to assist you at every step of your journey. <br>
-            Have a question or encounter an issue? Reach out to us, and we'll ensure your travel plans stay on track.</p><br><br>
+        Reliable Support: Our dedicated support team is here to assist you at every step of your journey. Have a question or encounter an issue? Reach out to us, and we'll ensure your travel plans stay on track.</p>
 
         <h2 id="journey">Embark on Your Journey</h2>
-        <p>OkaTravel is more than an app; it's a gateway to extraordinary adventures. <br>
-            Whether you're planning a solo escapade, a romantic getaway, or a family vacation, let OkaTravel be your trusted companion. <br>
-            Download the app today and start turning your travel dreams into reality. <br><br>
+        <p>OkaTravel is more than an app; it's a gateway to extraordinary adventures. Whether you're planning a solo escapade, a romantic getaway, or a family vacation, let OkaTravel be your trusted companion. Download the app today and start turning your travel dreams into reality.
 
-        Your journey begins here with OkaTravel—because every adventure deserves a perfect plan.</p><br><br>
+        Your journey begins here with OkaTravel—because every adventure deserves a perfect plan.</p>
 
 
 
         </body>    
 </html>
+

@@ -5,9 +5,11 @@
     padding-block: 5px;
     justify-content: space-between;
 }
+
 #leftnav {
     display: flex;
 }
+
 #rightnav {
     display: flex;
 }
@@ -16,3 +18,38 @@
     padding-inline: 5px;
 }
 
+.dropBTN {
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.dropdown {
+    float: left;
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    overflow: auto;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.show {
+    display: block;
+}

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['email'])) {
-    header("Location: signIn.html");
+    header("Location: ../views/signIn.html");
     exit();
 }
 

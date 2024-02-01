@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $email = ($_POST["email"]);
     $password = ($_POST["psw"]);
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['f_name'] = $row['f_name'];
             $_SESSION['l_name'] = $row['l_name'];
 
-            header("Location: homepage.php");
+            header("Location: ../views/homepage.html");
             exit();
         } else {
             echo "Incorrect password."; 

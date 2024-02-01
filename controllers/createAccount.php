@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $fname = ($_POST["fname"]);
     $lname = ($_POST["lname"]);
     $email = ($_POST["email"]);
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result === false) {
         die("Error: " . mysqli_error($conn));
     } else {
-        header("Location: signIn.html");
+        header("Location: ../views/signIn.html");
         exit();
     }
 }

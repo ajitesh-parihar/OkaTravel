@@ -18,7 +18,7 @@ if (!isset($_SESSION['email'])) {
 
 $user = $_SESSION['email'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $trip_length = intval($_POST["trip_length"]);
     $budget = floatval($_POST["budget"]);
     $accommodation_type = mysqli_real_escape_string($conn, $_POST["accommodation_type"]);

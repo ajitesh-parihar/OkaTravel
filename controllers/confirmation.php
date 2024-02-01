@@ -13,7 +13,7 @@
         <p>You can now log in using your credentials.</p>
     </div>
     <br>
-     <p><a href="signIn.html">Sign In</a></p>
+     <p><a href="../views/signIn.html">Sign In</a></p>
 
 </body>
 </html>

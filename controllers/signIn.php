@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = ($_POST["email"]);
     $password = ($_POST["psw"]);
 
-    $query = "SELECT email, password, f_name, l_name FROM users WHERE email = '$email'"; 
+    $query = "SELECT email, password, f_name, l_name FROM Users WHERE email = '$email'"; 
 
     $result = $conn->query($query); 
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['f_name'] = $row['f_name'];
             $_SESSION['l_name'] = $row['l_name'];
 
-            header("Location: ../views/homepage.html");
+            header("Location: /views/Homepage.html");
             exit();
         } else {
             echo "Incorrect password."; 

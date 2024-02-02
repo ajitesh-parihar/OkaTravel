@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="../style/styles.css">
+    <title>User Survey</title>
+</head>
+<body>
+
+    <form action="../controllers/survey.php" method="POST">
+        <div class="container">
+            <h1>User Survey</h1>
+            <p>Please fill in this form to provide your answers.</p>
+            <hr>
+
+            <label for="trip_length"><b>Desired Trip Length (in days)</b></label>
+            <input type="number" placeholder="Enter Trip Length" name="trip_length" id="trip_length" required>
+
+            <label for="budget"><b>Budget (USD)</b></label>
+            <input type="number" step="0.01" placeholder="Enter Budget" name="budget" id="budget" required>
+
+            <label for="accommodation_type"><b>Preferred Accommodation Type</b></label>
+            <select name="accommodation_type" id="accommodation_type" required>
+                <option value="">Select Accommodation Type</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Resort">Resort</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Vacation Rental">Vacation Rental</option>
+            </select>
+
+            <label for="preferred_activities"><b>Preferred Activities</b></label>
+            <select name="preferred_activities" id="preferred_activities" required>
+                <option value="">Select Preferred Activities</option>
+                <option value="Hiking">Hiking</option>
+                <option value="Sightseeing">Sightseeing</option>
+                <option value="Beach Activities">Beach Activities</option>
+                <option value="Cultural Events">Cultural Events</option>
+                <option value="Winter Activities">Cultural Events</option>
+            </select>
+
+            <label for="weather_preference"><b>Weather Preference</b></label>
+            <select name="weather_preference" id="weather_preference" required>
+                <option value="">Select Weather Preference</option>
+                <option value="Sunny">Sunny</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Snowy">Snowy</option>
+                <option value="Mild">Mild</option>
+                <option value="Variable">Variable</option>
+            </select>
+            
+            <hr>
+            <button type="submit" class="submitbtn">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,40 +1,38 @@
 <?php
+session_start();
+
 $serverName = "127.0.0.1";
 $username = "OkaTravel";
 $password = "123123";
 $database = "OkaTravel";
 
-// Establishes the connection
 $conn = mysqli_connect($serverName, $username, $password, $database);
 
-// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and get user input
+    $fname = ($_POST["fname"]);
+    $lname = ($_POST["lname"]);
     $email = ($_POST["email"]);
     $password = ($_POST["psw"]);
 
-    // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert data into the database
-    $sql = "INSERT INTO Users (Email, Password) VALUES (?, ?)";
+    $sql = "INSERT INTO Users (Email, Password, f_name, l_name) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
 
-    // Bind parameters and execute the statement
-    mysqli_stmt_bind_param($stmt, "ss", $email, $hashed_password);
+    mysqli_stmt_bind_param($stmt, "ssss", $email, $hashed_password, $fname, $lname);
     $result = mysqli_stmt_execute($stmt);
 
     if ($result === false) {
         die("Error: " . mysqli_error($conn));
     } else {
-        // Redirect to a confirmation page after successful registration
-        header("Location: homepage.php");
+        header("Location: ../views/signIn.html");
         exit();
     }
 }
 
 mysqli_close($conn);
+?>
